@@ -166,7 +166,7 @@ class ListPessoa extends Component {
 }
 
 export default class PessoaBox extends Component {
-    Url = 'http://localhost:8080/api-syscad/';
+    Url = 'http://localhost:9000/api-syscad/';
 
     state = {
         pessoas: [],
@@ -301,7 +301,7 @@ export default class PessoaBox extends Component {
 
         console.log('CPF: ', requestInfo)
         fetch(this.Url + 'pessoa/pesquisar', requestInfo)
-            .then(this.refreshUserTable())
+            //.then(this.refreshUserTable())
             .catch(e => console.log(e));
     }
 
@@ -347,7 +347,7 @@ export default class PessoaBox extends Component {
 
                     <div className="col-md-6 my-3">
                         <h2 className="font-weight-bold text-center"> Pesquisar </h2>
-                        <BuscarPessoa pessoas={this.state.pessoas} pessoaBuscar={this.buscar} />
+                        <BuscarPessoa pessoaBuscar={this.buscar} />
 
                         <h2 className="font-weight-bold text-center"> Lista de Pessoas </h2>
                         <ListPessoa pessoas={this.state.pessoas} deletePessoa={this.delete} />

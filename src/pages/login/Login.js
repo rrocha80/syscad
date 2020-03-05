@@ -26,7 +26,7 @@ export default class Login extends Component {
             }),
         };
 
-        fetch('http://localhost:8080/api-syscad/pessoa/auth', requestInfo)
+        fetch('http://localhost:9000/api-syscad/pessoa/auth', requestInfo)
         .then(response => {
             if(response.ok) {
                 console.log('response: ', response)      
